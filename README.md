@@ -22,34 +22,8 @@ Unterstützt werden Ordner-Links, einzelne Datei-Links sowie Google Docs, Sheets
 
 Private Links, für die man bei Google eingeloggt sein muss, gehen nicht. Das Tool nutzt absichtlich weder Google-API noch Login, deswegen braucht es auch keinen API-Key.
 
-## Selbst bauen
-
-Voraussetzung ist Python 3.9 oder neuer.
-
-```bat
-pip install -r requirements.txt
-build.bat
-```
-
-Die EXE landet danach in `dist\GoogleDriveFolderDownloader.exe`. Alternativ direkt:
-
-```bat
-pyinstaller --noconfirm --onefile --windowed --icon icon.ico --add-data "icon.ico;." --version-file version_info.txt --name GoogleDriveFolderDownloader gdrive_downloader.py
-```
-
-## Release über GitHub Actions
-
-Der Workflow in `.github/workflows/build-exe.yml` baut bei jedem Push eine EXE und legt sie als Artifact ab. Wenn ein Tag wie `v1.0.0` gepusht wird, wird zusätzlich ein Release mit der EXE erstellt:
-
-```bat
-git tag v1.0.0
-git push origin v1.0.0
-```
-
 ## Lizenz
 
 MIT. Siehe [LICENSE](LICENSE).
 
----
 
-Kein offizielles Google-Produkt.
